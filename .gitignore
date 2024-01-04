@@ -1,0 +1,33 @@
+# Arquivos do sistema
+*.iml
+*.class
+*.log
+*.war
+*.ear
+hs_err_pid*
+
+# Arquivos de configuração do IntelliJ
+.idea/
+
+# Diretório de compilação do Maven
+target/
+
+# Dependências do Maven
+lib/
+*.jar
+
+# Arquivos de saída dos testes
+test-output/
+
+# Logs e relatórios
+logs/
+reports/
+
+# Arquivos temporários
+.tmp/
+
+# Arquivos de configuração do Appium
+appium_logs/
+appium_logs_debug/
+appium_error/
+node_modules/
