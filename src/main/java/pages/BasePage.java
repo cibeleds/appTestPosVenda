@@ -18,7 +18,7 @@ public class BasePage {
 
     public BasePage(AppiumDriver<MobileElement> driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, 10);
+        this.wait = new WebDriverWait(driver, 15);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
@@ -39,7 +39,7 @@ public class BasePage {
     @AndroidFindBy(xpath = "//android.widget.Button[@text='ENTRAR']")
     protected MobileElement entrarBtn;
 
-    @AndroidFindBy(xpath ="//android.view.View[@text='Boas-vindas!']")
+    @AndroidFindBy(xpath ="//android.widget.TextView[@text='Boas-vindas!']")
     protected MobileElement home;
 
     protected void waitForVisibility(MobileElement element) {
@@ -50,6 +50,17 @@ public class BasePage {
         waitForVisibility(botaoFazerLogin);
         botaoFazerLogin.click();
     }
+
+    public void preencherEmail(String emailLogin){
+        clicarFazerLogin();
+        waitForVisibility(emailInput);
+        emailInput.sendKeys(emailLogin);
+    }
+
+    public void clicarAvancar(){
+        waitForVisibility(avancarLoginbtn);
+        avancarLoginbtn.click();
+    }
     public void voltarAppHome() {
         clicarFazerLogin();
         voltarBtn.click();
@@ -58,9 +69,9 @@ public class BasePage {
 
     public void logar(String emailLogin, String senha) {
         clicarFazerLogin();
-        waitForVisibility(emailInput);
-        emailInput.sendKeys(emailLogin);
-        avancarLoginbtn.click();
+        preencherEmail(emailLogin);
+        clicarAvancar();
+        waitForVisibility(senhaInput);
         senhaInput.sendKeys(senha);
         entrarBtn.click();
     }

@@ -21,12 +21,23 @@
       <artifactId>java-client</artifactId>
       <version>7.5.1</version>
     </dependency>
-
     <!-- Dependências do TestNG -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.4.0</version>
+    </dependency>
+    <!-- Dependências do AWS -->
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>s3</artifactId>
+      <version>2.18.12</version>
+    </dependency>
+    <!-- Dependência específica para o DynamoDB -->
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>dynamodb</artifactId>
+      <version>2.18.12</version>
     </dependency>
   </dependencies>
 </project>

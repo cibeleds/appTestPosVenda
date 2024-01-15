@@ -14,9 +14,9 @@ public class BaseTest {
         driver = DriverManager.getDriver();
     }
 
-//    @AfterMethod
-//    public void tearDown() {
-//        // Encerra o driver utilizando o DriverManager
-//        DriverManager.quitDriver();
-//    }
+    @AfterMethod
+    public void tearDown() {
+        // Encerra o driver utilizando o DriverManager
+        DriverManager.quitDriver();
+    }
 }
