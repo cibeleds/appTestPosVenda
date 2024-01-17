@@ -11,6 +11,7 @@ import java.net.URL;
 
 public class DriverManager {
     private static AppiumDriver<MobileElement> driver;
+    private static ConfigReader configReader = new ConfigReader();
 
     public static AppiumDriver<MobileElement> getDriver() {
         if (driver == null) {
@@ -24,7 +25,7 @@ public class DriverManager {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("deviceName", "com.raizenpower.app.MainActivity");
-        capabilities.setCapability("appium:app", "/home/cibeleds/Documentos/appTest/appTestPosVenda/src/test/resources/app-debug.apk");
+        capabilities.setCapability("appium:app", configReader.getPathApp());
 
         try {
             // Inicializa o driver baseado nas capacidades fornecidas

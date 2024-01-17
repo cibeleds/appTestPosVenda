@@ -20,7 +20,7 @@ public class ContratarProdutoPage {
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Contratar um produto']")
     protected MobileElement contratarProdutoBtn;
-    @AndroidFindBy(xpath = "//android.widget.Button[@text='COMEÇAR A ECONOMIZAR']")
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='SIMULAR']")
     protected MobileElement simularBtn;
 
 
